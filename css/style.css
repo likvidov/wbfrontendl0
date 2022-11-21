@@ -1,0 +1,223 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffffff;
+}
+
+.container{
+  max-width: 1400px;
+  width: 100%;
+}
+
+.header{
+  background: #6725A8;
+}
+
+.header .navbar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header .navbar .menu {
+  display: flex;
+  width: 170px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  height: 48px;
+}
+
+.header .navbar .menu .menu-btn{
+  display: flex;
+  width: 48px;
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 8px;
+  margin-right: 16px;
+  padding: 8px 9px;
+}
+
+.header .navbar .menu .menu-btn #toggle {
+  display: none;
+}
+
+.header .navbar .menu .menu-btn .hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+.header .navbar .menu .menu-btn .hamburger div {
+  width: 28px;
+  height: 4px;
+  margin: 0 auto;
+  border-radius: 4px;
+  background-color: #fff;
+  align-self: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.header .navbar .menu .menu-btn .nav {
+  position: fixed;
+  width: 15%;
+  background-color: #fff;
+  top: -100%; left: 0; right: 0; bottom: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  transform: scale(0);
+}
+.header .navbar .menu .menu-btn .nav .nav-wrapper {
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+  height: 100%;
+}
+.header .navbar .menu .menu-btn .nav nav {
+  text-align: left;
+  margin-left: 25%;
+}
+n.header .navbar .menu .menu-btn .nav nav a {
+  position: relative;
+  text-decoration: none;
+  color: #000;
+  font-size: 2em;
+  display: inline-block;
+  margin-top: 1.25em;
+  transition: color 0.2s ease-in-out;
+  letter-spacing: 1px;
+}
+.header .navbar .menu .menu-btn .nav nav a:before {
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 0.25em;
+  background-color: white;
+  left: -0.5em;
+  transition: all 0.2s ease-in-out;
+}
+.header .navbar .menu .menu-btn .nav nav a:hover {
+  color: white;
+}
+.header .navbar .menu .menu-btn .nav nav a:hover:before {
+  height: 100%;
+}
+
+#toggle:checked + .hamburger .top-bun {
+  transform: rotate(-45deg);
+  margin-top: 25px;
+}
+#toggle:checked + .hamburger .bottom-bun {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+#toggle:checked + .hamburger .meat {
+  transform: rotate(45deg);
+  margin-top: -7px;
+}
+
+#toggle:checked + .hamburger + .nav {
+  top: 0;
+  transform: scale(1);
+}
+
+.header .navbar .menu .logo{
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header::after{
+  content: '';
+  display: block;
+  background: #6725A8;
+  height: 24px;
+}
+
+.header .navbar .search{
+  display: flex;
+  width: 970px;
+}
+
+.header .navbar .search .search-wrapper{
+  width: 100%;
+  opacity: 0.4;
+}
+
+.header .navbar .search .search-wrapper #searchGoods{
+  width: 100%;
+  border-radius: 36px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.header .navbar .search .search-wrap-btn{
+  margin-left: -48px;
+  align-self: center;
+}
+
+.header .navbar .search .search-wrap-btn .search-btn{
+  width: 24px;
+  height: 24px;
+  opacity: 0.4;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.header .navbar .search .search-wrap-btn .search-btn::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  background: url('../img/Search.png') no-repeat;
+}
+
+.header .navbar .nav-elements {
+  height: 56px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #fff;
+  padding: 0px 0px 3px;
+  justify-content: end;
+  font-size: 14px;
+  line-height: 16px;
+  background-position: center top;
+  position: relative;
+}
+
+#profile {
+  background-image: url('../img/profile.png');
+}
+#wishlist {
+  background-image: url('../img/wishlist.png');
+}
+
+.header .navbar .nav-elements .counter{
+  position: absolute;
+  top: -4px;
+  right: 2px;
+  height: 16px;
+  width: 16px;
+  border-radius: 16px;
+  background-color: #F55123;
+  color: #fff;
+  font-size: 10px;
+  line-height: 16px;
+  font-family: GTEestiProDisplay, Arial, sans-serif;
+  font-weight: 700;
+  padding: 1px 5px;
+}

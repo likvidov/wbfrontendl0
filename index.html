@@ -4,11 +4,69 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Товары и точка</title>
 </head>
 <body>
-  <header>
-    
+  <header class="header">
+    <div class="container">
+        <div class="navbar">
+          <div class="menu">
+            <div class="menu-btn">
+              <input id="toggle" type="checkbox"></input>
+
+              <label for="toggle" class="hamburger">
+                <div class="top-bun"></div>
+                <div class="meat"></div>
+                <div class="bottom-bun"></div>
+              </label>
+
+              <div class="nav">
+                <div class="nav-wrapper">
+                  <nav>
+                    <a href="#">HOME</a><br>
+                    <a href="#">ABOUT</a><br>
+                    <a href="#">WORK</a><br>
+                    <a href="#">SERVICES</a>
+                  </nav>
+
+                  <input id="toggle" type="checkbox"></input>
+                </div>
+              </div>
+            </div>
+
+            <a class="logo" href="index.html">Товары и точка</a>
+          </div>
+
+          <form class="search">
+            <div class="search-wrapper">
+              <input id="searchGoods" class="search-wrapper_input" type="text" aria-label="Поиск товаров" role="search" placeholder="Я ищу">
+            </div>
+            <div class="search-wrap-btn">
+              <button type="submit" class="search-btn" id="search-btn" aria-label="Поиск товаров"></button>
+            </div>
+          </form>
+  
+          <a href="#" class="nav-elements" id="profile">
+            
+            Профиль
+          </a>
+  
+          <a href="#" class="nav-elements" id="wishlist">
+            Корзина
+            <span class="counter">3</span>
+          </a>
+        </div>
+    </div>
   </header>
+
+  <main>
+
+  </main>
+
+  <footer>
+
+  </footer>
 </body>
 </html>

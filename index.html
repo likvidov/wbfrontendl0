@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,65 +9,411 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Товары и точка</title>
 </head>
+
 <body>
   <header class="header">
     <div class="container">
-        <div class="navbar">
-          <div class="menu">
-            <div class="menu-btn">
-              <input id="toggle" type="checkbox"></input>
+      <div class="navbar">
+        <div class="menu">
+          <div class="menu-btn">
+            <input id="toggle" type="checkbox"></input>
 
-              <label for="toggle" class="hamburger">
-                <div class="top-bun"></div>
-                <div class="meat"></div>
-                <div class="bottom-bun"></div>
-              </label>
+            <label for="toggle" class="hamburger">
+              <div class="top-bun"></div>
+              <div class="meat"></div>
+              <div class="bottom-bun"></div>
+            </label>
 
-              <div class="nav">
-                <div class="nav-wrapper">
-                  <nav>
-                    <a href="#">HOME</a><br>
-                    <a href="#">ABOUT</a><br>
-                    <a href="#">WORK</a><br>
-                    <a href="#">SERVICES</a>
-                  </nav>
+            <div class="nav">
+              <div class="nav-wrapper">
+                <nav>
+                  <a href="#">HOME</a><br>
+                  <a href="#">ABOUT</a><br>
+                  <a href="#">WORK</a><br>
+                  <a href="#">SERVICES</a>
+                </nav>
 
-                  <input id="toggle" type="checkbox"></input>
-                </div>
+                <input id="toggle" type="checkbox"></input>
               </div>
             </div>
-
-            <a class="logo" href="index.html">Товары и точка</a>
           </div>
 
-          <form class="search">
-            <div class="search-wrapper">
-              <input id="searchGoods" class="search-wrapper_input" type="text" aria-label="Поиск товаров" role="search" placeholder="Я ищу">
-            </div>
-            <div class="search-wrap-btn">
-              <button type="submit" class="search-btn" id="search-btn" aria-label="Поиск товаров"></button>
-            </div>
-          </form>
-  
-          <a href="#" class="nav-elements" id="profile">
-            
-            Профиль
-          </a>
-  
-          <a href="#" class="nav-elements" id="wishlist">
-            Корзина
-            <span class="counter">3</span>
-          </a>
+          <a class="logo" href="index.html">Товары и точка</a>
         </div>
+
+        <form class="search">
+          <div class="search-wrapper">
+            <input id="searchGoods" class="search-wrapper_input" type="text" aria-label="Поиск товаров" role="search"
+              placeholder="Я ищу...">
+          </div>
+          <div class="search-wrap-btn">
+            <button type="submit" class="search-btn" id="search-btn" aria-label="Поиск товаров"></button>
+          </div>
+        </form>
+
+        <a href="#" class="nav-elements" id="profile">
+          Профиль
+        </a>
+
+        <a href="#" class="nav-elements" id="wishlist">
+          Корзина
+          <span class="counter">3</span>
+        </a>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main class="main">
+    <div class="container">
 
+      <div class="main__content">
+        <div class="basket">
+          <h2 class="subtitle">Корзина</h2>
+  
+          <div class="basket-active">
+            <div class="active__select-all">
+              <input type="checkbox" name="select-all" id="select-all">
+              <label for="select-all">Выбрать все</label>
+            </div>
+  
+            <hr>
+  
+            <div class="card-list">
+              <div class="card-list__item">
+                  <div class="card-item__description">
+                    <input type="checkbox">
+                    <a class="card-item__img" href="#"><img src="img/item1.png" alt=""></a>
+                    <div class="card-item__info">
+                      <a href="#" class="card-info__title">
+                        <span class="card-title__name">
+                          Футболка UZcotton мужская
+                        </span>
+                        <span class="card-title__brand">
+    
+                        </span>
+                      </a>
+                      <div class="card-info__parameters">
+                        <span class="card-parameters__color">Цвет: белый</span>
+                        <span class="card-parameters__size">Размер: 56</span>
+                      </div>
+                      <div class="card-info__properties">
+                        <div class="card-properties__store">Коледино WB</div>
+                        <div class="card-properties__store">OOO Вайлдберриз</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card-item__sidebar">
+                    <div class="card-sidebar__count">
+                      <input type="number" name="" id="" class="card-count__input" value="1">
+                      <p class="card-count__remained">Осталось 2 шт.</p>
+                      <div class="card-count__btn">
+                        <button class="count-btn__like"></button>
+                        <button class="count-btn__dlt"></button>
+                      </div>
+                    </div>
+  
+                    <div class="card-sidebar__price">
+                      <p class="price-count">522 com</p>
+                      <p class="price-discount">1051 сом</p>
+                    </div>
+                  </div>
+              </div>
+  
+              <div class="card-list__item">
+                  <div class="card-item__description">
+                    <input type="checkbox">
+                    <a class="card-item__img" href="#"><img src="img/item2.png" alt=""></a>
+                    <div class="card-item__info">
+                      <a href="#" class="card-info__title">
+                        <span class="card-title__name">
+                          Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, </span>
+                        <span class="card-title__brand">MobiSafe</span>
+                      </a>
+                      <div class="card-info__parameters">
+                        <span class="card-parameters__color">Цвет: прозрачный</span>
+                      </div>
+                      <div class="card-info__properties">
+                        <div class="card-properties__store">Коледино WB</div>
+                        <div class="card-properties__store">OOO Мегапрофстиль</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card-item__sidebar">
+                    <div class="card-sidebar__count" id="sidebar__count2">
+                      <input type="number" name="" id="count_input2" class="card-count__input" value="200">
+
+                      <div class="card-count__btn">
+                        <button class="count-btn__like"></button>
+                        <button class="count-btn__dlt"></button>
+                      </div>
+                    </div>
+  
+                    <div class="card-sidebar__price">
+                      <p id="count2" fill="red" class="price-count">2 100 047 com</p>
+                      <p class="price-discount">2 300 047 сом</p>
+                    </div>
+                  </div>
+              </div>
+  
+              <div class="card-list__item">
+                <div class="card-item__description">
+                  <input type="checkbox">
+                  <a class="card-item__img" href="#"><img src="img/item3.png" alt=""></a>
+                  <div class="card-item__info">
+                    <a href="#" class="card-info__title">
+                      <span class="card-title__name">
+                        Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,
+                      </span><br>
+                      <span class="card-title__brand">
+                        Faber-Castell 
+                      </span>
+                    </a>
+                    <div class="card-info__properties">
+                      <div class="card-properties__store">Коледино WB</div>
+                      <div class="card-properties__store">OOO Вайлдберриз</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="card-item__sidebar">
+                  <div class="card-sidebar__count">
+                    <input type="number" name="" id="" class="card-count__input" value="2">
+                    <p class="card-count__remained">Осталось 2 шт.</p>
+                    <div class="card-count__btn">
+                      <button class="count-btn__like"></button>
+                      <button class="count-btn__dlt red"></button>
+                    </div>
+                  </div>
+  
+                  <div class="card-sidebar__price">
+                    <p class="price-count">494 com</p>
+                    <p class="price-discount">950 сом</p>
+                  </div>
+                </div>
+            </div>
+            </div>
+          </div>
+  
+          <div class="basket-disable">
+            <h3 class="basket-disable__title">Отсутствуют &#183; 3 товара</h3>
+  
+            <hr>
+  
+            <div class="card-list">
+              <div class="card-list__item">
+                  <div class="card-item__description">
+                    <a class="card-item__img" href="#"><img src="img/item1.png" alt=""></a>
+                    <div class="card-item__info">
+                      <a href="#" class="card-info__title">
+                        <span class="card-title__name">
+                          Футболка UZcotton мужская
+                        </span>
+                        <span class="card-title__brand">
+    
+                        </span>
+                      </a>
+                      <div class="card-info__parameters">
+                        <span class="card-parameters__color">Цвет: белый</span>
+                        <span class="card-parameters__size">Размер: 56</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card-item__sidebar">
+                    <div class="card-sidebar__count">
+                      <div class="card-count__btn">
+                        <button class="count-btn__like"></button>
+                        <button class="count-btn__dlt"></button>
+                      </div>
+                    </div>
+  
+                  </div>
+              </div>
+  
+              <div class="card-list__item">
+                  <div class="card-item__description">
+                    <a class="card-item__img" href="#"><img src="img/item2.png" alt=""></a>
+                    <div class="card-item__info">
+                      <a href="#" class="card-info__title">
+                        <span class="card-title__name">
+                          Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, </span>
+                        <span class="card-title__brand">MobiSafe</span>
+                      </a>
+                      <div class="card-info__parameters">
+                        <span class="card-parameters__color">Цвет: прозрачный</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="card-item__sidebar">
+                    <div class="card-sidebar__count">
+                      <div class="card-count__btn">
+                        <button class="count-btn__like"></button>
+                        <button class="count-btn__dlt"></button>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+  
+              <div class="card-list__item" id="item3">
+                <div class="card-item__description">
+                  <a class="card-item__img" href="#"><img src="img/item3.png" alt=""></a>
+                  <div class="card-item__info">
+                    <a href="#" class="card-info__title">
+                      <span class="card-title__name">
+                        Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,
+                      </span>
+                      <span class="card-title__brand">
+                        Faber-Castell 
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                
+                <div class="card-item__sidebar">
+                  <div class="card-sidebar__count">
+                    <div class="card-count__btn">
+                      <button class="count-btn__like"></button>
+                      <button class="count-btn__dlt red"></button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="delivery">
+          <div class="delivery__method">
+            <h3 class="delivery__subtitle">Способ доставки</h3>
+            <div class="selected-address">
+              <div class="selected-address__address">
+                <span class="selected-address__label">Пункт выдачи</span>
+                <div class="selected-address__data">
+                  <span class="data__address">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+                  <span class="data__rating"><sub>4.99</sub></span>
+                  <span class="data__hours">Ежедневно с 10 до 21</span>
+                </div>
+              </div>
+              <div class="selected-address__cost">
+                <span class="selected-address__label">Стоимость доставки</span>
+                <span class="price">Бесплатно</span>
+              </div>
+              <div class="selected-address__date">
+                <span class="selected-address__label">5—6 февраля</span>
+                <div class="date__items">
+                  <ul class="items_ul">
+                    <li><img src="/img/item1.png" alt="item1"></li>
+                    <li><img src="/img/item2.png" alt="item1"></li>
+                    <li><img src="/img/item3.png" alt="item1"></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="selected-address__date">
+                <span class="selected-address__label">7—8 февраля</span>
+                <div class="date__items">
+                  <ul class="items_ul">
+                    <li><img src="/img/item2.png" alt="item1"></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <p class="method__note">Обратная доставка товаров на склад при отказе — <span class="green">бесплатно</span></p>
+          </div>
+          <div class="delivery__payment">
+            <h3 class="delivery__subtitle">Способ оплаты</h3>
+            <div class="selected__card">
+              <span class="card__icon"></span>
+              <span class="card__number">1234 56•• •••• 1234</span>
+              <span class="card__expiry">01/30</span>
+            </div>
+            <p class="payment__note">Спишем оплату с карты при получении</p>
+          </div>
+          <div class="delivery__recipient">
+            <h3 class="delivery__subtitle">Получатель</h3>
+            <form action="POST" class="delivery-recipient__data">
+              <div class="text-field recipient__firstname">
+                <input class="text-field__input" type="text" id="firstname" placeholder="Имя">
+                <label class="text-field__label" for="firstname">Имя</label>
+              </div>
+              <div class="text-field recipient__lastname">
+                <input class="text-field__input" type="text" id="lastname" placeholder="Фамилия">
+                <label class="text-field__label" for="lastname">Фамилия</label>
+              </div>
+              <div class="text-field recipient__email">
+                <input class="text-field__input" type="email" id="email" placeholder="Почта">
+                <label class="text-field__label" for="email">Почта</label>
+              </div>
+              <div class="text-field recipient__number">
+                <input class="text-field__input" type="tel" id="number" placeholder="Телефон">
+                <label class="text-field__label" for="number">Телефон</label>
+              </div>
+              <div class="text-field recipient__inn">
+                <input class="text-field__input" type="number" id="inn" placeholder="ИНН">
+                <label class="text-field__label" for="inn">ИНН</label>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="sidebar">
+        <div class="sidebar__top">
+          <p class="top__total line">
+            <span>Итого</span>
+            <span>2 101 063 сом</span>
+          </p>
+          <p class="top__count line">
+            <span>4 товара</span>
+            <span>2 302 048 сом</span>
+          </p>
+          <p class="top__discount line">
+            <span>Скидка</span>
+            <span>−200 985 сом</span>
+          </p>
+          <p class="top__discount line">
+            <span>Доставка</span>
+            <span>Бесплатно</span>
+          </p>
+        </div>
+
+        <div class="sidebar__delivery">
+          <span class="delivery__place">Доставка в пункт выдачи</span>
+          <span class="delivery__address">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+          <span class="delivery__date">5–8 фев</span>
+          <span class="delivery__note">Обратная доставка товаров на склад при отказе — бесплатно</span>
+        </div>
+
+        <div class="sidebar__payment">
+          <span class="payment__subtitle">Оплата картой</span>
+          <div class="selected__card">
+            <span class="card__icon"></span>
+            <span class="card__number">1234 56•• •••• 1234</span>
+          </div>
+          <div class="payment__pay-now">
+            <label>
+              <input type="checkbox" name="" value="yes">Списать оплату сразу
+            </label>
+  
+            <p class="payment__note">Спишем оплату с карты при получении</p>
+          </div>
+
+        </div>
+
+        <button class="sidebar__btn-order">Заказать</button>
+        <span class="sidebar__offerta-confirm">Соглашаюсь с правилами пользования торговой площадкой и возврата</span>
+      </div>
+    </div>
   </main>
 
-  <footer>
-
+  <footer class="footer">
+    <div class="container">
+      <p class="footer_copyright">© 2022  ООО «Товары и точка»</p>
+    </div>
   </footer>
 </body>
+
 </html>

@@ -68,12 +68,17 @@
 
       <div class="main__content">
         <div class="basket">
+
           <h2 class="subtitle">Корзина</h2>
   
           <div class="basket-active">
             <div class="active__select-all">
-              <input type="checkbox" name="select-all" id="select-all">
-              <label for="select-all">Выбрать все</label>
+              <div class="accordion__info">
+                <input type="checkbox" name="select-all" id="select-all" checked>
+                <label for="select-all">Выбрать все</label>
+              </div>
+              
+              <div class="accordion__icon"></div>
             </div>
   
             <hr>
@@ -81,7 +86,11 @@
             <div class="card-list">
               <div class="card-list__item">
                   <div class="card-item__description">
-                    <input type="checkbox">
+                    <div class="card-item__select">
+                      <input type="checkbox" class="item__checkbox" id="item1">
+                      <label for="item1"></label>
+                    </div>
+                    
                     <a class="card-item__img" href="#"><img src="img/item1.png" alt=""></a>
                     <div class="card-item__info">
                       <a href="#" class="card-info__title">
@@ -105,7 +114,11 @@
                   
                   <div class="card-item__sidebar">
                     <div class="card-sidebar__count">
-                      <input type="number" name="" id="" class="card-count__input" value="1">
+                      <div class="card-count__counter">
+                        <button class="counter__minus">-</button>
+                        <input type="number" id="count_input1" name="" id="" class="counter__input" value="1">
+                        <button class="counter__plus">+</button>
+                      </div>
                       <p class="card-count__remained">Осталось 2 шт.</p>
                       <div class="card-count__btn">
                         <button class="count-btn__like"></button>
@@ -122,7 +135,10 @@
   
               <div class="card-list__item">
                   <div class="card-item__description">
-                    <input type="checkbox">
+                    <div class="card-item__select">
+                      <input type="checkbox" class="item__checkbox" id="item2">
+                      <label for="item2"></label>
+                    </div>
                     <a class="card-item__img" href="#"><img src="img/item2.png" alt=""></a>
                     <div class="card-item__info">
                       <a href="#" class="card-info__title">
@@ -142,8 +158,11 @@
                   
                   <div class="card-item__sidebar">
                     <div class="card-sidebar__count" id="sidebar__count2">
-                      <input type="number" name="" id="count_input2" class="card-count__input" value="200">
-
+                      <div class="card-count__counter">
+                        <button class="counter__minus">-</button>
+                        <input type="number" id="count_input2" name="" id="" class="counter__input" value="200">
+                        <button class="counter__plus">+</button>
+                      </div>
                       <div class="card-count__btn">
                         <button class="count-btn__like"></button>
                         <button class="count-btn__dlt"></button>
@@ -159,7 +178,10 @@
   
               <div class="card-list__item">
                 <div class="card-item__description">
-                  <input type="checkbox">
+                  <div class="card-item__select">
+                    <input type="checkbox" class="item__checkbox" id="item3">
+                    <label for="item3"></label>
+                  </div>
                   <a class="card-item__img" href="#"><img src="img/item3.png" alt=""></a>
                   <div class="card-item__info">
                     <a href="#" class="card-info__title">
@@ -179,7 +201,11 @@
                 
                 <div class="card-item__sidebar">
                   <div class="card-sidebar__count">
-                    <input type="number" name="" id="" class="card-count__input" value="2">
+                    <div class="card-count__counter">
+                      <button class="counter__minus">-</button>
+                      <input type="number" id="count_input3" name="" id="" class="counter__input" value="2">
+                      <button class="counter__plus">+</button>
+                    </div>
                     <p class="card-count__remained">Осталось 2 шт.</p>
                     <div class="card-count__btn">
                       <button class="count-btn__like"></button>
@@ -197,7 +223,14 @@
           </div>
   
           <div class="basket-disable">
-            <h3 class="basket-disable__title">Отсутствуют &#183; 3 товара</h3>
+            <div class="disable__select-all">
+              <div class="accordion__info">
+                Отсутствуют &#183; 3 товара
+              </div>
+              
+              <div class="accordion__icon"></div>
+            </div>
+            <h3 class="basket-disable__title"></h3>
   
             <hr>
   
@@ -287,7 +320,10 @@
   
         <div class="delivery">
           <div class="delivery__method">
-            <h3 class="delivery__subtitle">Способ доставки</h3>
+            <div class="method__header">
+              <h3 class="delivery__subtitle">Способ доставки</h3>
+              <button class="btn-change">Изменить</button>
+            </div>
             <div class="selected-address">
               <div class="selected-address__address">
                 <span class="selected-address__label">Пункт выдачи</span>
@@ -306,8 +342,13 @@
                 <div class="date__items">
                   <ul class="items_ul">
                     <li><img src="/img/item1.png" alt="item1"></li>
-                    <li><img src="/img/item2.png" alt="item1"></li>
-                    <li><img src="/img/item3.png" alt="item1"></li>
+                    <li>
+                      <img src="/img/item2.png" alt="item1">
+                      <span class="counter">184</span>
+                    </li>
+                    <li>
+                      <img src="/img/item3.png" alt="item1">
+                      <span class="counter">2</span>
                   </ul>
                 </div>
               </div>
@@ -315,7 +356,10 @@
                 <span class="selected-address__label">7—8 февраля</span>
                 <div class="date__items">
                   <ul class="items_ul">
-                    <li><img src="/img/item2.png" alt="item1"></li>
+                    <li>
+                      <img src="/img/item2.png" alt="item1">
+                      <span class="counter">16</span>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -323,7 +367,10 @@
             <p class="method__note">Обратная доставка товаров на склад при отказе — <span class="green">бесплатно</span></p>
           </div>
           <div class="delivery__payment">
-            <h3 class="delivery__subtitle">Способ оплаты</h3>
+            <div class="method__header">
+              <h3 class="delivery__subtitle">Способ оплаты</h3>
+              <button class="btn-change">Изменить</button>
+            </div>
             <div class="selected__card">
               <span class="card__icon"></span>
               <span class="card__number">1234 56•• •••• 1234</span>
@@ -347,12 +394,13 @@
                 <label class="text-field__label" for="email">Почта</label>
               </div>
               <div class="text-field recipient__number">
-                <input class="text-field__input" type="tel" id="number" placeholder="Телефон">
+                <input class="text-field__input" type="tel" id="number" placeholder="Телефон" value="+7 (988) 123-45-67">
                 <label class="text-field__label" for="number">Телефон</label>
               </div>
               <div class="text-field recipient__inn">
                 <input class="text-field__input" type="number" id="inn" placeholder="ИНН">
                 <label class="text-field__label" for="inn">ИНН</label>
+                <span class="text-field__note">Для таможенного оформления</span>
               </div>
             </form>
           </div>
@@ -381,14 +429,20 @@
         </div>
 
         <div class="sidebar__delivery">
-          <span class="delivery__place">Доставка в пункт выдачи</span>
+          <div class="sidebar__header">
+            <span class="delivery__place">Доставка в пункт выдачи</span>
+            <span class="btn-change-pen"></span>
+          </div>
           <span class="delivery__address">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
           <span class="delivery__date">5–8 фев</span>
           <span class="delivery__note">Обратная доставка товаров на склад при отказе — бесплатно</span>
         </div>
 
         <div class="sidebar__payment">
-          <span class="payment__subtitle">Оплата картой</span>
+          <div class="sidebar__header">
+            <span class="payment__subtitle">Оплата картой</span>
+            <span class="btn-change-pen"></span>
+          </div>
           <div class="selected__card">
             <span class="card__icon"></span>
             <span class="card__number">1234 56•• •••• 1234</span>
@@ -414,6 +468,7 @@
       <p class="footer_copyright">© 2022  ООО «Товары и точка»</p>
     </div>
   </footer>
-</body>
 
+  <script src="/js/main.js"></script>
+</body>
 </html>

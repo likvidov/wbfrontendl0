@@ -115,9 +115,9 @@
                   <div class="card-item__sidebar">
                     <div class="card-sidebar__count">
                       <div class="card-count__counter">
-                        <button class="counter__minus">-</button>
-                        <input type="number" id="count_input1" name="" id="" class="counter__input" value="1">
-                        <button class="counter__plus">+</button>
+                        <button class="counter__minus" onclick="this.nextElementSibling.stepDown();">-</button>
+                        <input type="number" id="count_input1" name="" id="" class="counter__input" value="1" min="1" max="2" readonly>
+                        <button class="counter__plus" onclick="this.previousElementSibling.stepUp();">+</button>
                       </div>
                       <p class="card-count__remained">Осталось 2 шт.</p>
                       <div class="card-count__btn">
@@ -128,7 +128,7 @@
   
                     <div class="card-sidebar__price">
                       <p class="price-count">522 com</p>
-                      <p class="price-discount">1051 сом</p>
+                      <p class="price-discount">1051 com</p>
                     </div>
                   </div>
               </div>
@@ -159,9 +159,9 @@
                   <div class="card-item__sidebar">
                     <div class="card-sidebar__count" id="sidebar__count2">
                       <div class="card-count__counter">
-                        <button class="counter__minus">-</button>
-                        <input type="number" id="count_input2" name="" id="" class="counter__input" value="200">
-                        <button class="counter__plus">+</button>
+                        <button class="counter__minus" onclick="this.nextElementSibling.stepDown();">-</button>
+                        <input type="number" id="count_input2" name="" id="" class="counter__input" value="200" min="1" max="200" readonly>
+                        <button class="counter__plus" onclick="this.previousElementSibling.stepUp();">+</button>
                       </div>
                       <div class="card-count__btn">
                         <button class="count-btn__like"></button>
@@ -170,8 +170,8 @@
                     </div>
   
                     <div class="card-sidebar__price">
-                      <p id="count2" fill="red" class="price-count">2 100 047 com</p>
-                      <p class="price-discount">2 300 047 сом</p>
+                      <p id="count2" class="price-count">2 100 047 com</p>
+                      <p class="price-discount">2 300 047 com</p>
                     </div>
                   </div>
               </div>
@@ -202,20 +202,20 @@
                 <div class="card-item__sidebar">
                   <div class="card-sidebar__count">
                     <div class="card-count__counter">
-                      <button class="counter__minus">-</button>
-                      <input type="number" id="count_input3" name="" id="" class="counter__input" value="2">
-                      <button class="counter__plus">+</button>
+                      <button class="counter__minus" onclick="this.nextElementSibling.stepDown();">-</button>
+                      <input type="number" id="count_input3" name="" id="" class="counter__input" value="2" min="1" max="2" readonly>
+                      <button class="counter__plus" onclick="this.previousElementSibling.stepUp();">+</button>
                     </div>
                     <p class="card-count__remained">Осталось 2 шт.</p>
                     <div class="card-count__btn">
                       <button class="count-btn__like"></button>
-                      <button class="count-btn__dlt red"></button>
+                      <button class="count-btn__dlt"></button>
                     </div>
                   </div>
   
                   <div class="card-sidebar__price">
                     <p class="price-count">494 com</p>
-                    <p class="price-discount">950 сом</p>
+                    <p class="price-discount">950 com</p>
                   </div>
                 </div>
             </div>
@@ -237,6 +237,10 @@
             <div class="card-list">
               <div class="card-list__item">
                   <div class="card-item__description">
+                    <div class="card-item__select disabled">
+                      <input type="checkbox" class="item__checkbox" id="item4">
+                      <label for="item4"></label>
+                    </div>
                     <a class="card-item__img" href="#"><img src="img/item1.png" alt=""></a>
                     <div class="card-item__info">
                       <a href="#" class="card-info__title">
@@ -267,6 +271,10 @@
   
               <div class="card-list__item">
                   <div class="card-item__description">
+                    <div class="card-item__select disabled">
+                      <input type="checkbox" class="item__checkbox" id="item5">
+                      <label for="item5"></label>
+                    </div>
                     <a class="card-item__img" href="#"><img src="img/item2.png" alt=""></a>
                     <div class="card-item__info">
                       <a href="#" class="card-info__title">
@@ -292,6 +300,10 @@
   
               <div class="card-list__item" id="item3">
                 <div class="card-item__description">
+                  <div class="card-item__select disabled">
+                    <input type="checkbox" class="item__checkbox" id="item6">
+                    <label for="item6"></label>
+                  </div>
                   <a class="card-item__img" href="#"><img src="img/item3.png" alt=""></a>
                   <div class="card-item__info">
                     <a href="#" class="card-info__title">
@@ -309,7 +321,7 @@
                   <div class="card-sidebar__count">
                     <div class="card-count__btn">
                       <button class="count-btn__like"></button>
-                      <button class="count-btn__dlt red"></button>
+                      <button class="count-btn__dlt"></button>
                     </div>
                   </div>
                 </div>
@@ -384,23 +396,27 @@
               <div class="text-field recipient__firstname">
                 <input class="text-field__input" type="text" id="firstname" placeholder="Имя">
                 <label class="text-field__label" for="firstname">Имя</label>
+                <span class="text-field__note">Укажите имя</span>
               </div>
               <div class="text-field recipient__lastname">
                 <input class="text-field__input" type="text" id="lastname" placeholder="Фамилия">
                 <label class="text-field__label" for="lastname">Фамилия</label>
+                <span class="text-field__note">Для таможенного оформления</span>
               </div>
               <div class="text-field recipient__email">
                 <input class="text-field__input" type="email" id="email" placeholder="Почта">
                 <label class="text-field__label" for="email">Почта</label>
+                <span class="text-field__note">Для таможенного оформления</span>
               </div>
               <div class="text-field recipient__number">
-                <input class="text-field__input" type="tel" id="number" placeholder="Телефон" value="+7 (988) 123-45-67">
+                <input class="text-field__input" type="tel" id="number" placeholder="Телефон" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" maxlength="30" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" value="+7 (988) 123-45-67">
                 <label class="text-field__label" for="number">Телефон</label>
+                <span class="text-field__note">Для таможенного оформления</span>
               </div>
               <div class="text-field recipient__inn">
-                <input class="text-field__input" type="number" id="inn" placeholder="ИНН">
+                <input class="text-field__input" type="number" id="inn" placeholder="ИНН" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                 <label class="text-field__label" for="inn">ИНН</label>
-                <span class="text-field__note">Для таможенного оформления</span>
+                <span class="text-field__note error">Для таможенного оформления</span>
               </div>
             </form>
           </div>
@@ -412,15 +428,15 @@
         <div class="sidebar__top">
           <p class="top__total line">
             <span>Итого</span>
-            <span>2 101 063 сом</span>
+            <span class="count">2 101 063 сом</span>
           </p>
           <p class="top__count line">
             <span>4 товара</span>
-            <span>2 302 048 сом</span>
+            <span class="count">2 302 048 сом</span>
           </p>
           <p class="top__discount line">
             <span>Скидка</span>
-            <span>−200 985 сом</span>
+            <span class="count"> −200 985 сом</span>
           </p>
           <p class="top__discount line">
             <span>Доставка</span>
@@ -448,16 +464,17 @@
             <span class="card__number">1234 56•• •••• 1234</span>
           </div>
           <div class="payment__pay-now">
-            <label>
-              <input type="checkbox" name="" value="yes">Списать оплату сразу
-            </label>
+            <div class="pay-now">
+              <input type="checkbox" id="item4" name="" value="yes">Списать оплату сразу
+              <label for="item4"></label>
+            </div>
   
             <p class="payment__note">Спишем оплату с карты при получении</p>
           </div>
 
         </div>
 
-        <button class="sidebar__btn-order">Заказать</button>
+        <input type="submit" class="sidebar__btn-order"></input>
         <span class="sidebar__offerta-confirm">Соглашаюсь с правилами пользования торговой площадкой и возврата</span>
       </div>
     </div>
@@ -468,7 +485,6 @@
       <p class="footer_copyright">© 2022  ООО «Товары и точка»</p>
     </div>
   </footer>
-
-  <script src="/js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

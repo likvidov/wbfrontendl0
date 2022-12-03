@@ -1,5 +1,5 @@
 'use strict';
-document.addEventListener('DOMContentLoaded', () =>{
+document.addEventListener('DOMContentLoaded', () => {
   const selectAllBtn = document.getElementById('select-all');
   const cardListItemsActive = document.querySelectorAll('.basket-active .card-list__item');
   const searchGoods = document.getElementById('searchGoods');
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     let count1 = 0;
     let count2 = 0;
     document.querySelector('.card-list').querySelectorAll('.card-list__item').forEach((el) => {
-      if(el.querySelector('.item__checkbox').checked) {
+      if (el.querySelector('.item__checkbox').checked) {
         count1 += Number(el.querySelector('.price-count').textContent.replace('com', '').split(' ').join(''));
         count2 += Number(el.querySelector('.price-discount').textContent.replace('com', '').split(' ').join(''))
       }
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () =>{
   }
 
   function selectAll() {
-    if(selectAllBtn.checked) {
+    if (selectAllBtn.checked) {
       cardListItemsActive.forEach((el) => {
         el.querySelector('.item__checkbox').checked = true
       })
@@ -35,14 +35,14 @@ document.addEventListener('DOMContentLoaded', () =>{
 
   function updaterCounter() {
     document.querySelectorAll('.card-count__counter').forEach((el) => {
-      if(el.children[1].value <= el.children[1].min){
+      if (el.children[1].value <= el.children[1].min) {
         el.children[0].disabled = true
       }
       else {
         el.children[0].disabled = false
       }
-  
-      if(el.children[1].value >= el.children[1].max){
+
+      if (el.children[1].value >= el.children[1].max) {
         el.children[2].disabled = true
       }
       else {
@@ -52,10 +52,10 @@ document.addEventListener('DOMContentLoaded', () =>{
   }
 
   function finder(finder) {
-    const inputValue =  finder.path[2].children[0].children[0].value.trim();
+    const inputValue = finder.path[2].children[0].children[0].value.trim();
     document.querySelectorAll('.card-list__item').forEach(item => {
       const searchString = new RegExp(inputValue, 'i');
-      if(!searchString.test(item.children[0].children[2].children[0].children[0].textContent.trim())){
+      if (!searchString.test(item.children[0].children[2].children[0].children[0].textContent.trim())) {
         item.classList.add('disabled')
       } else {
         item.classList.remove('disabled')
@@ -67,7 +67,10 @@ document.addEventListener('DOMContentLoaded', () =>{
   counter();
   updaterCounter();
   selectAllBtn.addEventListener('change', selectAll);
-  searchBtn.addEventListener('click', finder)
+  searchBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    finder(e);
+  })
   // searchGoods.addEventListener('input', finder, this.value)
 
   document.querySelectorAll('.card-count__counter').forEach((el) => {
@@ -95,21 +98,21 @@ document.addEventListener('DOMContentLoaded', () =>{
   })
 
   document.querySelector('body').onclick = e => {
-    if(e.target.className == 'count-btn__dlt') {
+    if (e.target.className == 'count-btn__dlt') {
       let good = e.target.closest('.card-list__item');
       good.remove();
       counter();
     }
-    
-    if(e.target.className == 'count-btn__like') {
-      e.target.classList.add('active'); 
-    } else if(e.target.className == 'count-btn__like active') {
-      e.target.classList.remove('active'); 
+
+    if (e.target.className == 'count-btn__like') {
+      e.target.classList.add('active');
+    } else if (e.target.className == 'count-btn__like active') {
+      e.target.classList.remove('active');
     }
   }
 
   document.querySelector('.basket').onclick = e => {
-    if(e.target.className != 'accordion__icon') return;
+    if (e.target.className != 'accordion__icon') return;
     e.target.parentNode.parentNode.querySelector('.card-list').hidden = !e.target.parentNode.parentNode.querySelector('.card-list').hidden;
   };
 
@@ -132,17 +135,17 @@ document.addEventListener('DOMContentLoaded', () =>{
   let btnSend = document.querySelector(".sidebar__btn-order");
   // console.log(btnSend)
 
-  firstnameInput.addEventListener("keyup", function(){
+  firstnameInput.addEventListener("keyup", function () {
     this.value = this.value.replace(/[\d]/g, "");
   });
 
-  lastnameInput.addEventListener("keyup", function(){
+  lastnameInput.addEventListener("keyup", function () {
     this.value = this.value.replace(/[\d]/g, "");
   });
-  numberInput.addEventListener("keyup", function(){
+  numberInput.addEventListener("keyup", function () {
     this.value = this.value.replace(/[A-Za-zА-Яа-яЁё]/, '');
   });
-  innInput.addEventListener("keyup", function(){
+  innInput.addEventListener("keyup", function () {
     this.value = this.value.replace(/[^\d]/g, "");
   });
 
@@ -161,44 +164,44 @@ document.addEventListener('DOMContentLoaded', () =>{
       );
   };
 
-  firstnameInput.addEventListener("input", function(){
-    if(firstnameInput.value == '') {
+  firstnameInput.addEventListener("input", function () {
+    if (firstnameInput.value == '') {
       firstnameNote.classList.remove('error')
       return;
     }
-    if(firstnameInput.value != '') {
+    if (firstnameInput.value != '') {
       firstnameNote.classList.remove('error')
       return;
     }
   })
-  lastnameInput.addEventListener("input", function(){
-    if(lastnameInput.value == '') {
+  lastnameInput.addEventListener("input", function () {
+    if (lastnameInput.value == '') {
       lastnameNote.classList.remove('error')
       return;
     }
-    if(lastnameInput.value != '') {
+    if (lastnameInput.value != '') {
       lastnameNote.classList.remove('error')
       return;
     }
   })
 
-  innInput.addEventListener("input", function(){
-    if(innInput.value == '') {
+  innInput.addEventListener("input", function () {
+    if (innInput.value == '') {
       innNote.classList.remove('error')
       return;
     }
-    if(innNote.value != '') {
+    if (innNote.value != '') {
       innNote.classList.remove('error')
       return;
     }
   })
 
-  numberInput.addEventListener("blur", function(){
-    if(numberInput.value == '') {
+  numberInput.addEventListener("blur", function () {
+    if (numberInput.value == '') {
       numberNote.classList.remove('error')
       return;
     }
-    if(!validateNumber(numberInput.value)) {
+    if (!validateNumber(numberInput.value)) {
       numberNote.textContent = 'Формат: +9 999 999 99 99';
       numberNote.classList.add('error');
     } else {
@@ -206,45 +209,45 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
   })
 
-  emailInput.addEventListener("blur", function(){
-    if(emailInput.value == '') {
+  emailInput.addEventListener("blur", function () {
+    if (emailInput.value == '') {
       emailNote.classList.remove('error')
       return;
     }
-    if(!validateEmail(emailInput.value)) {
+    if (!validateEmail(emailInput.value)) {
       emailNote.textContent = 'Проверьте адрес электронной почты'
       emailNote.classList.add('error');
     } else {
       emailNote.classList.remove('error');
     }
-  });  
+  });
 
 
 
-  btnSend.addEventListener('click', function() {
-    if(firstnameInput.value == '') {
+  btnSend.addEventListener('click', function () {
+    if (firstnameInput.value == '') {
       firstnameNote.textContent = 'Укажите имя'
       firstnameNote.classList.add('error');
     } else {
       firstnameNote.classList.remove('error');
     }
-    if(lastnameInput.value == '') {
+    if (lastnameInput.value == '') {
       lastnameNote.textContent = 'Введите фамилию'
       lastnameNote.classList.add('error');
     } else {
       lastnameNote.classList.remove('error');
     }
-    if(emailInput.value == '') {
+    if (emailInput.value == '') {
       emailNote.textContent = 'Укажите электронную почту'
       emailNote.classList.add('error');
     }
-    if(numberInput.value == '') {
+    if (numberInput.value == '') {
       numberNote.textContent = 'Укажите номер телефона'
       numberNote.classList.add('error');
     } else {
       numberNote.classList.remove('error');
     }
-    if(innInput.value == '') {
+    if (innInput.value == '') {
       innNote.textContent = 'Укажите индекс'
       innNote.classList.add('error');
     } else {

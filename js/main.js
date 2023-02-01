@@ -10,14 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let count2 = 0;
     document.querySelector('.card-list').querySelectorAll('.card-list__item').forEach((el) => {
       if (el.querySelector('.item__checkbox').checked) {
-        count1 += Number(el.querySelector('.price-count').textContent.replace('com', '').split(' ').join(''));
-        count2 += Number(el.querySelector('.price-discount').textContent.replace('com', '').split(' ').join(''))
+        count1 += Number(el.querySelector('.price-count').textContent.replace('сом', '').split(' ').join(''));
+        count2 += Number(el.querySelector('.price-discount').textContent.replace('сом', '').split(' ').join(''))
       }
     })
 
-    document.querySelector('.top__total>.count').textContent = count1.toLocaleString() + ' com'
-    document.querySelector('.top__count>.count').textContent = count2.toLocaleString() + ' com'
-    document.querySelector('.top__discount>.count').textContent = '-' + (count2 - count1).toLocaleString() + ' com'
+    document.querySelector('.top__total>.count').innerHTML = count1.toLocaleString() + '<span class="small-size"> сом</span>'
+    document.querySelector('.top__count>.count').innerHTML = count2.toLocaleString() + ' сом'
+    let result = count2 - count1;
+
+    document.querySelector('.top__discount>.count').innerHTML = `−${result.toLocaleString()} сом`;
   }
 
   function selectAll() {
@@ -75,23 +77,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.card-count__counter').forEach((el) => {
     el.children[0].addEventListener('click', () => {
-      let priceCount = el.closest('.card-list__item').children[1].children[1].children[0].textContent.replace('com', '').split(' ').join('');
-      let priceDiscount = el.closest('.card-list__item').children[1].children[1].children[1].textContent.replace('com', '').split(' ').join('');
+      let priceCount = el.closest('.card-list__item').children[1].children[1].children[0].textContent.replace('сом', '').split(' ').join('');
+      let priceDiscount = el.closest('.card-list__item').children[1].children[1].children[1].textContent.replace('сом', '').split(' ').join('');
       let newPriceCount = Math.round(priceCount - (priceCount / (Number(el.children[1].value) + 1)));
       let newPriceDiscount = Math.round(priceDiscount - (priceDiscount / (Number(el.children[1].value) + 1)))
-      el.closest('.card-list__item').children[1].children[1].children[0].textContent = newPriceCount.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' com';
-      el.closest('.card-list__item').children[1].children[1].children[1].textContent = newPriceDiscount.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' com';
+      el.closest('.card-list__item').children[1].children[1].children[0].textContent = newPriceCount.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + 'сом';
+      el.closest('.card-list__item').children[1].children[1].children[1].textContent = newPriceDiscount.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' сом';
       counter();
       updaterCounter();
     })
 
     el.children[2].addEventListener('click', () => {
-      let priceCount = Number(el.closest('.card-list__item').children[1].children[1].children[0].textContent.replace('com', '').split(' ').join(''));
-      let priceDiscount = Number(el.closest('.card-list__item').children[1].children[1].children[1].textContent.replace('com', '').split(' ').join(''));
+      let priceCount = Number(el.closest('.card-list__item').children[1].children[1].children[0].textContent.replace('сом', '').split(' ').join(''));
+      let priceDiscount = Number(el.closest('.card-list__item').children[1].children[1].children[1].textContent.replace('сом', '').split(' ').join(''));
       let newPriceCount = Math.round(priceCount + (priceCount / (Number(el.children[1].value) + 1)));
       let newPriceDiscount = Math.round(priceDiscount + (priceDiscount / (Number(el.children[1].value) + 1)))
-      el.closest('.card-list__item').children[1].children[1].children[0].textContent = newPriceCount.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' com';
-      el.closest('.card-list__item').children[1].children[1].children[1].textContent = newPriceDiscount.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' com';
+      el.closest('.card-list__item').children[1].children[1].children[0].textContent = newPriceCount.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' сом';
+      el.closest('.card-list__item').children[1].children[1].children[1].textContent = newPriceDiscount.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' сом';
       counter();
       updaterCounter();
     })
@@ -166,52 +168,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
   firstnameInput.addEventListener("input", function () {
     if (firstnameInput.value == '') {
-      firstnameNote.classList.remove('error')
+      firstnameNote.parentNode.classList.remove('error')
       return;
     }
     if (firstnameInput.value != '') {
-      firstnameNote.classList.remove('error')
+      firstnameNote.parentNode.classList.remove('error')
       return;
     }
   })
   lastnameInput.addEventListener("input", function () {
     if (lastnameInput.value == '') {
-      lastnameNote.classList.remove('error')
+      lastnameNote.parentNode.classList.remove('error')
       return;
     }
     if (lastnameInput.value != '') {
-      lastnameNote.classList.remove('error')
+      lastnameNote.parentNode.classList.remove('error')
       return;
     }
   })
 
   innInput.addEventListener("input", function () {
     if (innInput.value == '') {
-      innNote.classList.remove('error')
+      innNote.parentNode.classList.remove('error')
       return;
     }
     if (innNote.value != '') {
-      innNote.classList.remove('error')
+      innNote.parentNode.classList.remove('error')
       return;
     }
   })
 
   numberInput.addEventListener("blur", function () {
     if (numberInput.value == '') {
-      numberNote.classList.remove('error')
+      numberNote.parentNode.classList.remove('error')
       return;
     }
     if (!validateNumber(numberInput.value)) {
       numberNote.textContent = 'Формат: +9 999 999 99 99';
-      numberNote.classList.add('error');
+      numberNote.parentNode.classList.add('error');
     } else {
-      numberNote.classList.remove('error');
+      numberNote.parentNode.classList.remove('error');
     }
   })
 
   emailInput.addEventListener("blur", function () {
     if (emailInput.value == '') {
-      emailNote.classList.remove('error')
+      emailNote.parentNode.classList.remove('error')
       return;
     }
     if (!validateEmail(emailInput.value)) {
@@ -227,31 +229,39 @@ document.addEventListener('DOMContentLoaded', () => {
   btnSend.addEventListener('click', function () {
     if (firstnameInput.value == '') {
       firstnameNote.textContent = 'Укажите имя'
-      firstnameNote.classList.add('error');
+      firstnameNote.parentNode.classList.add('error');
     } else {
-      firstnameNote.classList.remove('error');
+      firstnameNote.parentNode.classList.remove('error');
     }
     if (lastnameInput.value == '') {
-      lastnameNote.textContent = 'Введите фамилию'
-      lastnameNote.classList.add('error');
+      lastnameNote.parentNode.textContent = 'Введите фамилию'
+      lastnameNote.parentNode.classList.add('error');
     } else {
-      lastnameNote.classList.remove('error');
+      lastnameNote.parentNode.classList.remove('error');
     }
     if (emailInput.value == '') {
       emailNote.textContent = 'Укажите электронную почту'
-      emailNote.classList.add('error');
+      emailNote.parentNode.classList.add('error');
     }
     if (numberInput.value == '') {
       numberNote.textContent = 'Укажите номер телефона'
-      numberNote.classList.add('error');
+      numberNote.parentNode.classList.add('error');
     } else {
-      numberNote.classList.remove('error');
+      numberNote.parentNode.classList.remove('error');
     }
     if (innInput.value == '') {
       innNote.textContent = 'Укажите индекс'
-      innNote.classList.add('error');
+      innNote.parentNode.classList.add('error');
     } else {
-      innNote.classList.remove('error');
+      innNote.parentNode.classList.remove('error');
+    }
+  })
+
+  item10.addEventListener('change', function() {
+    if(item10.checked == true){
+      orderBtn.value = "Оплатить " + document.querySelector('.sidebar__top .top__total .count').textContent
+    } else {
+      orderBtn.value = "Заказать"
     }
   })
 })

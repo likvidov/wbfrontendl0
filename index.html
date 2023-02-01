@@ -75,13 +75,11 @@
             <div class="active__select-all">
               <div class="accordion__info">
                 <input type="checkbox" name="select-all" id="select-all" checked>
-                <label for="select-all" class="select-all__label">Выбрать все</label>
+                <label for="select-all" class="select-all__label"><span>Выбрать все</span></label>
               </div>
 
               <div class="accordion__icon"></div>
             </div>
-
-            <hr>
 
             <div class="card-list">
               <div class="card-list__item">
@@ -107,7 +105,7 @@
                     </div>
                     <div class="card-info__properties">
                       <div class="card-properties__store">Коледино WB</div>
-                      <div class="card-properties__store">OOO Вайлдберриз</div>
+                      <div class="card-properties__store" text="OOO Вайлдберриз">OOO Вайлдберриз</div>
                     </div>
                   </div>
                 </div>
@@ -115,7 +113,7 @@
                 <div class="card-item__sidebar">
                   <div class="card-sidebar__count">
                     <div class="card-count__counter">
-                      <button class="counter__minus" onclick="this.nextElementSibling.stepDown();">-</button>
+                      <button class="counter__minus" onclick="this.nextElementSibling.stepDown();">−</button>
                       <input type="number" id="count_input1" name="" id="" class="counter__input" value="1" min="1"
                         max="2" readonly>
                       <button class="counter__plus" onclick="this.previousElementSibling.stepUp();">+</button>
@@ -128,8 +126,8 @@
                   </div>
 
                   <div class="card-sidebar__price">
-                    <p class="price-count">522 com</p>
-                    <p class="price-discount">1051 com</p>
+                    <p class="price-count">522 <span>сом</span></p>
+                    <p class="price-discount" text="1051 сом">1051 <span>сом</span></p>
                   </div>
                 </div>
               </div>
@@ -153,7 +151,7 @@
                     </div>
                     <div class="card-info__properties">
                       <div class="card-properties__store">Коледино WB</div>
-                      <div class="card-properties__store">OOO Мегапрофстиль</div>
+                      <div class="card-properties__store" text="OOO «МЕГАПРОФСТИЛЬ»">OOO Мегапрофстиль</div>
                     </div>
                   </div>
                 </div>
@@ -161,10 +159,10 @@
                 <div class="card-item__sidebar">
                   <div class="card-sidebar__count" id="sidebar__count2">
                     <div class="card-count__counter">
-                      <button class="counter__minus" onclick="this.nextElementSibling.stepDown();">-</button>
+                      <button class="counter__minus" onclick="this.nextElementSibling.stepDown();">−</button>
                       <input type="number" id="count_input2" name="" id="" class="counter__input" value="200" min="1"
                         max="200" readonly>
-                      <button class="counter__plus" onclick="this.previousElementSibling.stepUp();">+</button>
+                      <button class="counter__plus plus2" onclick="this.previousElementSibling.stepUp();">+</button>
                     </div>
                     <div class="card-count__btn">
                       <button class="count-btn__like"></button>
@@ -173,8 +171,8 @@
                   </div>
 
                   <div class="card-sidebar__price">
-                    <p id="count2" class="price-count">2 100 047 com</p>
-                    <p class="price-discount">2 300 047 com</p>
+                    <p id="count2" class="price-count">2 100 047 <span>сом</span></p>
+                    <p class="price-discount" text="2 300 047сом">2 300 047 <span>сом</span></p>
                   </div>
                 </div>
               </div>
@@ -197,7 +195,7 @@
                     </a>
                     <div class="card-info__properties">
                       <div class="card-properties__store">Коледино WB</div>
-                      <div class="card-properties__store">OOO Вайлдберриз</div>
+                      <div class="card-properties__store" text="OOO Вайлдберриз">OOO Вайлдберриз</div>
                     </div>
                   </div>
                 </div>
@@ -205,7 +203,7 @@
                 <div class="card-item__sidebar">
                   <div class="card-sidebar__count">
                     <div class="card-count__counter">
-                      <button class="counter__minus" onclick="this.nextElementSibling.stepDown();">-</button>
+                      <button class="counter__minus" onclick="this.nextElementSibling.stepDown();">−</button>
                       <input type="number" id="count_input3" name="" id="" class="counter__input" value="2" min="1"
                         max="2" readonly>
                       <button class="counter__plus" onclick="this.previousElementSibling.stepUp();">+</button>
@@ -218,8 +216,8 @@
                   </div>
 
                   <div class="card-sidebar__price">
-                    <p class="price-count">494 com</p>
-                    <p class="price-discount">950 com</p>
+                    <p class="price-count">494 <span>сом</span></p>
+                    <p class="price-discount" text="950 сом">950 <span>сом</span></p>
                   </div>
                 </div>
               </div>
@@ -235,8 +233,6 @@
               <div class="accordion__icon"></div>
             </div>
             <h3 class="basket-disable__title"></h3>
-
-            <hr>
 
             <div class="card-list">
               <div class="card-list__item">
@@ -339,11 +335,11 @@
           <div class="delivery__method">
             <div class="method__header">
               <h3 class="delivery__subtitle">Способ доставки</h3>
-              <button class="btn-change">Изменить</button>
+              <a href="#openModal" class="btn-change">Изменить</a>
             </div>
             <div class="selected-address">
               <div class="selected-address__address">
-                <span class="selected-address__label">Пункт выдачи</span>
+                <span class="selected-address__label selected-address-label">Пункт выдачи</span>
                 <div class="selected-address__data">
                   <span class="data__address">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
                   <span class="data__rating"><sub>4.99</sub></span>
@@ -381,13 +377,13 @@
                 </div>
               </div>
             </div>
-            <p class="method__note">Обратная доставка товаров на склад при отказе — <span class="green">бесплатно</span>
+            <p class="method__note">Обратная доставка товаров на склад при отказе — <span class="green" text="Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно">бесплатно</span>
             </p>
           </div>
           <div class="delivery__payment">
             <div class="method__header">
               <h3 class="delivery__subtitle">Способ оплаты</h3>
-              <button class="btn-change">Изменить</button>
+              <a href="#openModal" class="btn-change">Изменить</a>
             </div>
             <div class="selected__card">
               <span class="card__icon"></span>
@@ -426,7 +422,7 @@
                 <input class="text-field__input" type="number" id="inn" placeholder="ИНН" maxlength="10"
                   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                 <label class="text-field__label" for="inn">ИНН</label>
-                <span class="text-field__note error">Для таможенного оформления</span>
+                <span class="text-field__note show">Для таможенного оформления</span>
               </div>
             </form>
           </div>
@@ -446,7 +442,7 @@
           </p>
           <p class="top__discount line">
             <span>Скидка</span>
-            <span class="count"> −200 985 сом</span>
+            <span class="count">−200 985 сом</span>
           </p>
           <p class="top__discount line">
             <span>Доставка</span>
@@ -457,26 +453,26 @@
         <div class="sidebar__delivery">
           <div class="sidebar__header">
             <span class="delivery__place">Доставка в пункт выдачи</span>
-            <span class="btn-change-pen"></span>
+            <a href="#openModal" class="btn-change-pen"></a>
           </div>
           <span class="delivery__address">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
           <span class="delivery__date">5–8 фев</span>
-          <span class="delivery__note">Обратная доставка товаров на склад при отказе — бесплатно</span>
+          <span class="delivery__note">Обратная доставка товаров на склад при отказе — <span class="green" text="Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно">бесплатно</span></span>
         </div>
 
         <div class="sidebar__payment">
           <div class="sidebar__header">
             <span class="payment__subtitle">Оплата картой</span>
-            <span class="btn-change-pen"></span>
+            <a href="#openModal" class="btn-change-pen"></a>
           </div>
           <div class="selected__card">
             <span class="card__icon"></span>
-            <span class="card__number">1234 56•• •••• 1234</span>
+            <span class="card__number">1234 12•• •••• 1234</span>
           </div>
           <div class="payment__pay-now">
             <div class="pay-now">
-              <input type="checkbox" id="item4" name="" value="yes">Списать оплату сразу
-              <label for="item4"></label>
+              <input type="checkbox" id="item10" name="">Списать оплату сразу
+              <label for="item10"></label>
             </div>
 
             <p class="payment__note">Спишем оплату с карты при получении</p>
@@ -484,8 +480,8 @@
 
         </div>
 
-        <input type="submit" class="sidebar__btn-order"></input>
-        <span class="sidebar__offerta-confirm">Соглашаюсь с правилами пользования торговой площадкой и возврата</span>
+        <input id="orderBtn" type="submit" class="sidebar__btn-order" value="Заказать"></input>
+        <span class="sidebar__offerta-confirm">Соглашаюсь <span class="underline">с правилами пользования торговой площадкой</span> и <span class="underline">возврата</span></span>
       </div>
     </div>
   </main>
@@ -505,6 +501,54 @@
       <div class="icon icon-5"></div>
     </div>
   </footer>
+
+  <div id="openModal" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Способ оплаты</h3>
+          <a href="#close" title="Close" class="close">×</a>
+        </div>
+
+        <div class="modal-body">    
+          <div class="form_radio">
+            <input id="radio-1" type="radio" name="radio" value="1" checked>
+            <label for="radio-1">
+              <span class="card__icon"></span>
+              <span class="card__number">1234 12•• •••• 1234</span>
+            </label>
+          </div>
+           
+          <div class="form_radio">
+            <input id="radio-2" type="radio" name="radio" value="2">
+            <label for="radio-2">
+              <span class="card__icon"></span>
+              <span class="card__number">1234 12•• •••• 1234</span>
+            </label>
+          </div>
+           
+          <div class="form_radio">
+            <input id="radio-3" type="radio" name="radio" value="3">
+            <label for="radio-3">
+              <span class="card__icon"></span>
+              <span class="card__number">1234 12•• •••• 1234</span>
+            </label>
+          </div>
+           
+          <div class="form_radio">
+            <input id="radio-4" type="radio" name="radio" value="4">
+            <label for="radio-4">
+              <span class="card__icon"></span>
+              <span class="card__number">1234 12•• •••• 1234</span>
+            </label>
+          </div>
+
+          <a href="#close" id="changeBtn" class="modal__btn-change">Выбрать</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 

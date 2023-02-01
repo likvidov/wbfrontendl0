@@ -20,6 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let result = count2 - count1;
 
     document.querySelector('.top__discount>.count').innerHTML = `−${result.toLocaleString()} сом`;
+
+    document.querySelectorAll('li > .counter').forEach((el, index) => {
+      document.querySelectorAll('.counter__input').forEach((el2, index2) => {
+        if(index == index2) {
+          el.textContent = el2.value
+        }
+      })
+    })
   }
 
   function selectAll() {
@@ -79,9 +87,16 @@ document.addEventListener('DOMContentLoaded', () => {
     el.children[0].addEventListener('click', () => {
       let priceCount = el.closest('.card-list__item').children[1].children[1].children[0].textContent.replace('сом', '').split(' ').join('');
       let priceDiscount = el.closest('.card-list__item').children[1].children[1].children[1].textContent.replace('сом', '').split(' ').join('');
-      let newPriceCount = Math.round(priceCount - (priceCount / (Number(el.children[1].value) + 1)));
-      let newPriceDiscount = Math.round(priceDiscount - (priceDiscount / (Number(el.children[1].value) + 1)))
-      el.closest('.card-list__item').children[1].children[1].children[0].textContent = newPriceCount.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + 'сом';
+      let newPriceCount = 0;
+      let newPriceDiscount = 0;
+      if((Number(el.children[1].value) - 1) == 1) {
+        newPriceCount = Math.round(priceCount - (priceCount / (Number(el.children[1].value))));
+        newPriceDiscount = Math.round(priceDiscount - (priceDiscount / (Number(el.children[1].value))))
+      } else {
+        newPriceCount = Math.round(priceCount - (priceCount / (Number(el.children[1].value) + 1)));
+        newPriceDiscount = Math.round(priceDiscount - (priceDiscount / (Number(el.children[1].value) + 1)))
+      }
+      el.closest('.card-list__item').children[1].children[1].children[0].textContent = newPriceCount.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' сом';
       el.closest('.card-list__item').children[1].children[1].children[1].textContent = newPriceDiscount.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' сом';
       counter();
       updaterCounter();
@@ -90,14 +105,26 @@ document.addEventListener('DOMContentLoaded', () => {
     el.children[2].addEventListener('click', () => {
       let priceCount = Number(el.closest('.card-list__item').children[1].children[1].children[0].textContent.replace('сом', '').split(' ').join(''));
       let priceDiscount = Number(el.closest('.card-list__item').children[1].children[1].children[1].textContent.replace('сом', '').split(' ').join(''));
-      let newPriceCount = Math.round(priceCount + (priceCount / (Number(el.children[1].value) + 1)));
-      let newPriceDiscount = Math.round(priceDiscount + (priceDiscount / (Number(el.children[1].value) + 1)))
+      let newPriceCount = 0;
+      let newPriceDiscount = 0;
+      
+      if(Number(el.children[1].value + 1) > el.children[1].max){
+        newPriceCount = Math.round(priceCount + (priceCount / (Number(el.children[1].value) - 1)));
+        newPriceDiscount = Math.round(priceDiscount + (priceDiscount / (Number(el.children[1].value - 1))))
+      } else {
+        newPriceCount = Math.round(priceCount + (priceCount / (Number(el.children[1].value) + 1)));
+        newPriceDiscount = Math.round(priceDiscount + (priceDiscount / (Number(el.children[1].value) + 1)))
+      }
       el.closest('.card-list__item').children[1].children[1].children[0].textContent = newPriceCount.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' сом';
       el.closest('.card-list__item').children[1].children[1].children[1].textContent = newPriceDiscount.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + ' сом';
       counter();
       updaterCounter();
     })
   })
+
+  // document.querySelectorAll('.selected-address__date').forEach(el => {
+  //   console.log(el.children[1].children[0].children[0])
+  // })
 
   document.querySelector('body').onclick = e => {
     if (e.target.className == 'count-btn__dlt') {
